@@ -1,11 +1,17 @@
-# File: .github/workflows/hello.yml
-name: Say Hello
+name: Test Self-Hosted Runner
 
-on: [push]  # Trigger this action on every push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  greet:
-    runs-on: ubuntu-latest  # Use Ubuntu virtual machine
+  test-job:
+    runs-on: self-hosted
+
     steps:
-      - name: Print Hello
-        run: echo "Hello, Nani!"
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Run a script
+        run: echo "Hello from self-hosted runner!"
