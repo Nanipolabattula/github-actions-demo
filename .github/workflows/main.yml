@@ -1,0 +1,11 @@
+# File: .github/workflows/hello.yml
+name: Say Hello
+
+on: [push]  # Trigger this action on every push
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest  # Use Ubuntu virtual machine
+    steps:
+      - name: Print Hello
+        run: echo "Hello, Nani!"
